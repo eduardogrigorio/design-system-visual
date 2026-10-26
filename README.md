@@ -132,6 +132,104 @@ Uma IA deve usar este template para:
 7. evitar estilos isolados que quebrem o padrão;
 8. documentar qualquer alteração global no design system.
 
+### Como uma IA deve usar este repositório
+
+O repositório deve ser tratado como uma **fonte de referência de design**, e não como um conjunto de telas para copiar sem análise. A IA deve seguir este fluxo:
+
+#### 1. Entender o projeto
+
+Antes de escrever código, a IA deve identificar:
+
+- qual é o tipo do sistema;
+- quem utilizará a aplicação;
+- qual é a plataforma de execução;
+- quais são as funções principais;
+- quais telas, fluxos e estados são necessários.
+
+#### 2. Ler o guia visual
+
+A IA deve abrir o [`design-orange-system.md`](./design-orange-system.md) e extrair os tokens relevantes:
+
+- cores de fundo, superfície, texto e estados;
+- tipografia e hierarquia de títulos;
+- espaçamentos e tamanhos;
+- raios de borda e níveis de elevação;
+- regras de botões, campos, cards, tabelas e navegação.
+
+#### 3. Consultar os exemplos
+
+As imagens `Landing Page.JPG` e `assets_monitor.JPG` mostram como a mesma identidade visual pode ser aplicada em produtos diferentes. A IA deve observar a linguagem visual dos exemplos, mas adaptar a estrutura à finalidade do novo sistema.
+
+O objetivo não é copiar a landing page ou o monitor de ações. O objetivo é reutilizar os princípios: fundo escuro, contraste, destaque laranja, cards organizados, estados semânticos e hierarquia clara.
+
+#### 4. Escolher a implementação
+
+Depois de entender a plataforma, a IA deve escolher a implementação adequada:
+
+- **Python desktop:** PyQt6, layouts, widgets e QSS;
+- **Web:** componentes, CSS e tokens equivalentes;
+- **Mobile:** componentes nativos ou o framework escolhido;
+- **Dashboard:** cards, métricas, gráficos, tabelas e filtros;
+- **Ferramenta operacional:** formulários, ações, status e painéis.
+
+#### 5. Criar tokens antes das telas
+
+A IA deve transformar o guia em variáveis reutilizáveis antes de estilizar os componentes. Por exemplo:
+
+```python
+COLORS = {
+    "canvas": "#0d0d0d",
+    "surface_card": "#1a1a1a",
+    "surface_elevated": "#222222",
+    "primary": "#f47b20",
+    "primary_glow": "#ff9a3d",
+    "text": "#ffffff",
+    "body": "#d9d9d9",
+    "success": "#4caf50",
+    "warning": "#e8a02a",
+    "error": "#e5484d",
+}
+```
+
+Os mesmos valores podem ser convertidos para QSS, CSS, tema mobile ou outro sistema de estilos. A regra é manter uma única fonte de verdade para a identidade visual.
+
+#### 6. Montar componentes reutilizáveis
+
+A IA deve criar componentes antes de duplicar estilos em cada tela. Exemplos:
+
+```text
+AppButton
+AppInput
+AppCard
+AppTable
+AppBadge
+AppSidebar
+AppHeader
+AppDialog
+```
+
+Cada componente deve possuir estados normal, hover ou ativo, foco, desabilitado, erro e sucesso quando fizer sentido.
+
+#### 7. Implementar a tela sem perder o padrão
+
+Com os tokens e componentes definidos, a IA deve montar a tela do sistema. Ela pode alterar o conteúdo, a quantidade de campos, os indicadores e o fluxo, mas não deve inventar uma nova paleta ou misturar estilos incompatíveis sem justificar a decisão.
+
+#### 8. Validar visualmente
+
+Antes de considerar o trabalho pronto, a IA deve verificar:
+
+- contraste e legibilidade;
+- alinhamento e espaçamento;
+- comportamento em diferentes tamanhos de janela;
+- estados dos componentes;
+- consistência entre telas;
+- uso correto das cores semânticas;
+- ausência de cores, sombras ou componentes fora do padrão.
+
+#### 9. Documentar exceções
+
+Se o sistema exigir uma cor, componente ou fluxo que não exista no guia, a IA deve explicar a necessidade, registrar a decisão e evitar alterar o padrão global sem avaliar o impacto nos demais projetos.
+
 ### Prompt recomendado
 
 ```text
