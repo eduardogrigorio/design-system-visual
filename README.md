@@ -1,32 +1,34 @@
 # Template System
 
-Template visual e técnico para criação de sistemas Python modernos, consistentes e reutilizáveis.
+Design system visual e técnico para criação de sistemas modernos, consistentes e reutilizáveis.
 
-Este repositório funciona como uma base comum para novos projetos desenvolvidos com **Python** e **PyQt6**. Seu objetivo é evitar que cada sistema comece do zero e garantir que as telas mantenham uma identidade visual profissional, organizada e coerente.
+Este repositório funciona como uma base visual comum para diferentes tipos de sistemas, modelos de negócio e funções. Seu objetivo é evitar que cada projeto comece do zero e garantir que as interfaces mantenham uma identidade profissional, organizada e coerente, independentemente da tecnologia ou do domínio da aplicação.
 
 ## Para que serve
 
-O `template_system` pode ser usado por desenvolvedores, equipes de produto e ferramentas de Inteligência Artificial que precisam criar interfaces desktop com um modelo de design já definido.
+O `template_system` pode ser usado por desenvolvedores, equipes de produto e ferramentas de Inteligência Artificial que precisam criar qualquer tipo de interface com um modelo de design já definido. O padrão pode ser adaptado para sistemas administrativos, financeiros, comerciais, técnicos, educacionais, operacionais, dashboards, ferramentas internas, aplicações desktop, web e mobile.
 
 Ele serve como referência para:
 
+- criação de sistemas para diferentes áreas e finalidades;
 - criação de novos sistemas Python;
 - geração de interfaces PyQt6 por IAs;
+- adaptação do mesmo padrão para aplicações web, mobile e outras plataformas;
 - padronização de cores, tipografia e espaçamentos;
 - definição de botões, cards, campos, menus e painéis;
 - criação de dashboards e telas administrativas;
 - manutenção de uma identidade visual comum entre projetos;
 - evolução de componentes reutilizáveis ao longo do tempo.
 
-## Padrão técnico
+## Padrão técnico e adaptação por plataforma
 
-A tecnologia padrão para as interfaces deste template é:
+Para aplicações desktop desenvolvidas em Python, a tecnologia preferencial é:
 
 ```text
 Python + PyQt6 + Qt Style Sheets (QSS)
 ```
 
-O PyQt6 deve ser priorizado na criação de novas telas e componentes. Quando um projeto precisar de uma tecnologia diferente, a decisão deve ser documentada para preservar a consistência do ecossistema.
+O PyQt6 deve ser priorizado quando o projeto for um sistema desktop em Python. Para sistemas web, mobile ou desenvolvidos com outra tecnologia, o guia visual continua sendo a referência; seus tokens, componentes, cores, tipografia e espaçamentos devem ser adaptados à plataforma escolhida sem perder a identidade do design system.
 
 ## Guia visual oficial
 
@@ -42,30 +44,33 @@ Ele define, entre outros elementos:
 - regras para cards, botões, campos e navegação;
 - princípios de profundidade, brilho e contraste;
 - orientação para ícones e ilustrações;
-- estrutura visual de dashboards e sistemas administrativos.
+- estrutura visual de dashboards e sistemas administrativos;
+- adaptação para diferentes modelos de sistemas, fluxos e funções.
 
 Ao iniciar um novo projeto, o arquivo `design-orange-system.md` deve ser consultado antes da criação da interface.
 
 ## Uso por Inteligências Artificiais
 
-Este repositório foi criado para ser compreendido e utilizado por IAs que geram código, interfaces e sistemas completos.
+Este repositório foi criado para ser compreendido e utilizado por IAs que geram código, interfaces e sistemas completos de diferentes tipos. Ele pode ser incluído como contexto de design em projetos desktop, web, mobile, dashboards, ferramentas administrativas ou qualquer aplicação que precise de uma identidade visual consistente.
 
 Uma IA pode usar este template como contexto de design para:
 
 1. identificar a identidade visual do projeto;
 2. escolher as cores corretas;
 3. manter a hierarquia tipográfica;
-4. criar componentes PyQt6 consistentes;
-5. transformar tokens visuais em estilos QSS;
-6. produzir telas novas sem quebrar o padrão existente;
-7. reutilizar a mesma linguagem visual em diferentes sistemas.
+4. criar componentes PyQt6 consistentes quando o projeto for desktop em Python;
+5. transformar tokens visuais em estilos QSS ou no mecanismo equivalente da plataforma;
+6. adaptar os mesmos tokens para a tecnologia da aplicação;
+7. produzir telas novas sem quebrar o padrão existente;
+8. reutilizar a mesma linguagem visual em diferentes sistemas.
 
 ### Prompt recomendado para uma IA
 
 ```text
 Use este repositório como template visual e técnico para o novo sistema.
 
-Tecnologia obrigatória: Python com PyQt6.
+Para sistemas desktop em Python, use PyQt6 como tecnologia de interface.
+Para outros tipos de sistemas, adapte o design system à plataforma escolhida.
 
 Leia o arquivo design-orange-system.md antes de criar qualquer tela.
 Respeite a paleta, a tipografia, os espaçamentos, os raios, os componentes
@@ -91,13 +96,13 @@ Template System/
 
 ## Diretrizes para novos projetos
 
-Todo novo sistema baseado neste repositório deve, sempre que possível:
+Todo novo sistema baseado neste repositório, independentemente do seu modelo ou função, deve, sempre que possível:
 
-- usar PyQt6 para a interface;
+- usar PyQt6 quando for uma aplicação desktop em Python;
 - separar a apresentação, a lógica e o acesso a dados;
 - transformar as cores e medidas do guia em constantes ou tokens reutilizáveis;
-- centralizar os estilos QSS;
-- evitar estilos espalhados diretamente pelos widgets;
+- centralizar os estilos QSS em projetos PyQt6 ou utilizar o mecanismo equivalente da plataforma escolhida;
+- evitar estilos espalhados diretamente pelos componentes;
 - reutilizar componentes antes de criar variações isoladas;
 - manter a interface responsiva ao redimensionamento da janela;
 - validar estados normal, ativo, desabilitado, foco, erro e sucesso;
@@ -137,13 +142,13 @@ Depois, leia o guia de design:
 design-orange-system.md
 ```
 
-Em um projeto PyQt6, instale a dependência principal:
+Em um projeto desktop Python com PyQt6, instale a dependência principal:
 
 ```bash
 pip install PyQt6
 ```
 
-A implementação final deve converter as decisões do guia em widgets, layouts e estilos QSS adequados ao sistema criado.
+A implementação final deve converter as decisões do guia em componentes, layouts e estilos adequados à tecnologia do sistema criado. Em projetos PyQt6, isso significa utilizar widgets, layouts e QSS; em outras plataformas, devem ser utilizados os componentes equivalentes.
 
 ## Evolução do template
 
