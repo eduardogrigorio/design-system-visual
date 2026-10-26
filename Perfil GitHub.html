@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Eduardo Pena Grigorio · Infraestrutura, Segurança e Cloud</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --primary:#f47b20;--primary-active:#c95a0b;--glow:#ff9a3d;--ember:#7a3a0f;--ember-deep:#3a1c08;
+  --ink:#fff;--body:#d9d9d9;--muted:#8a8a8a;--hair:#2a2a2a;
+  --canvas:#0d0d0d;--soft:#141414;--card:#1a1a1a;--card-hi:#222;--on-primary:#0d0d0d;--success:#4caf50;
+  --display:"Sora","Outfit","Manrope",-apple-system,"Segoe UI",sans-serif;
+  --sans:"Manrope","Inter",-apple-system,"Segoe UI",sans-serif;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*,*::before,*::after{box-sizing:inherit}
+html{color-scheme:dark;scroll-padding-top:calc(80px + env(safe-area-inset-top,0px));scroll-behavior:smooth}
+body{margin:0;background:var(--canvas);color:var(--body);font:400 16px/1.55 var(--sans)}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+.logo{font:600 24px/1 var(--display);letter-spacing:-.5px;color:var(--ink)}
+.logo b{color:var(--primary);font-weight:600}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:rgba(13,13,13,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--hair)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:72px}
+nav ul{display:flex;gap:28px;list-style:none;margin:0;padding:0;font-weight:500;font-size:14px}
+nav ul a:hover{color:var(--primary)}
+.btn{display:inline-flex;align-items:center;justify-content:center;height:44px;padding:0 22px;border-radius:10px;font:600 14px/1 var(--sans);border:1px solid transparent;transition:background .15s}
+.btn-p{background:var(--primary);color:var(--on-primary)}
+.btn-p:active{background:var(--primary-active)}
+.btn-s{border-color:var(--hair);color:var(--ink)}
+.hero{position:relative;overflow:hidden;padding:96px 0;
+  background:radial-gradient(ellipse 60% 50% at 100% 100%,rgba(244,123,32,.35),transparent 70%),radial-gradient(ellipse 40% 40% at 0% 100%,rgba(122,58,15,.35),transparent 70%),var(--canvas)}
+.hero::before{content:"";position:absolute;top:0;right:0;width:360px;height:260px;
+  background-image:radial-gradient(var(--primary) 1.2px,transparent 1.6px);background-size:14px 14px;opacity:.28;
+  -webkit-mask-image:radial-gradient(circle at 100% 0,#000,transparent 70%);mask-image:radial-gradient(circle at 100% 0,#000,transparent 70%)}
+.grid{position:relative;display:grid;grid-template-columns:5fr 7fr;gap:48px;align-items:center}
+h1{font:600 clamp(34px,5.2vw,60px)/1.05 var(--display);letter-spacing:-1.5px;margin:0 0 24px;color:var(--ink)}
+h1 span{display:block;color:var(--primary)}
+h1 .l1{font-weight:400;color:var(--ink)}
+.rule{width:64px;height:2px;background:var(--primary);margin:0 0 28px}
+.lead{margin:0 0 28px;color:var(--body)}
+.feat{display:flex;align-items:center;gap:16px;padding:10px 0;font:600 18px/1.4 var(--sans);color:var(--ink)}
+.ring{flex:none;width:56px;height:56px;border:1.5px solid var(--primary);border-radius:50%;display:grid;place-items:center;color:var(--primary)}
+.ring svg{width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.mock{position:relative;background:var(--soft);border:1px solid var(--hair);border-radius:20px;padding:24px;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+.me{display:flex;align-items:center;gap:16px;margin-bottom:20px}
+.av{width:64px;height:64px;border-radius:50%;display:grid;place-items:center;font:600 22px var(--display);color:var(--primary);border:1.5px solid var(--primary);background:var(--card)}
+.me small{display:block;color:var(--muted);font-size:13px}
+.me strong{font:600 18px var(--display);color:var(--ink)}
+.stat{background:var(--card);border:1px solid var(--hair);border-radius:14px;padding:20px}
+.stat.hi{background:var(--card-hi);padding:24px}
+.stat small{display:block;color:var(--muted);font:500 13px/1.4 var(--sans)}
+.stat .n{font:600 28px/1.15 var(--display);letter-spacing:-.3px;color:var(--ink);margin:6px 0}
+.stat.hi .n{font-size:40px;letter-spacing:-.5px}
+.up{color:var(--success);font:500 13px var(--sans)}
+.row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px}
+.chart{margin-top:12px;background:var(--card);border:1px solid var(--hair);border-radius:14px;padding:16px 20px}
+.chart svg{width:100%;height:auto;display:block}
+.arrow{position:absolute;right:-28px;bottom:-34px;width:170px;filter:drop-shadow(0 10px 24px rgba(244,123,32,.45))}
+section{padding:96px 0}
+section.alt{background:var(--soft)}
+h2{font:600 clamp(28px,4vw,44px)/1.1 var(--display);letter-spacing:-1px;margin:0 0 12px;color:var(--ink)}
+h2 span{color:var(--primary)}
+.sub{margin:0 0 40px;max-width:620px;color:var(--muted)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--hair);border-radius:14px;padding:32px;transition:border-color .15s}
+.card:hover{border-color:var(--primary)}
+.card h3{font:600 18px/1.4 var(--sans);color:var(--ink);margin:16px 0 8px;word-break:break-word}
+.card p{margin:0 0 20px;font-size:14px;color:var(--muted);flex:1}
+.tag{align-self:flex-start;padding:4px 12px;border-radius:999px;background:var(--card-hi);color:var(--ink);font:500 13px var(--sans)}
+.tag.o{background:var(--primary);color:var(--on-primary);font:600 12px var(--sans);letter-spacing:1.5px;text-transform:uppercase}
+.skills{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.skills .card{padding:24px}
+.band{background:var(--primary);color:var(--on-primary);border-radius:14px;padding:64px;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap}
+.band h2{color:var(--on-primary);margin:0;max-width:560px}
+.band .btn{background:var(--canvas);color:var(--ink)}
+footer{padding:64px 0;border-top:1px solid var(--hair);color:#a8a8a8;font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:center}
+@media(max-width:1024px){.cards{grid-template-columns:repeat(2,1fr)}.skills{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:768px){
+  nav ul{display:none}
+  .hero,section{padding:64px 0}
+  .grid{grid-template-columns:1fr}
+  .cards,.skills{grid-template-columns:1fr}
+  .row{grid-template-columns:1fr}
+  .arrow{width:110px;right:-8px;bottom:-24px}
+  .band{padding:40px 24px}
+}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+  <a class="logo" href="#top">eduardo<b>grigorio</b></a>
+  <ul><li><a href="#skills">Competências</a></li><li><a href="#projetos">Projetos</a></li><li><a href="#contato">Contato</a></li></ul>
+  <a class="btn btn-p" href="https://github.com/eduardogrigorio" target="_blank" rel="noopener">Ver GitHub</a>
+</div></nav>
+
+<header class="hero" id="top"><div class="wrap grid">
+  <div>
+    <h1><span class="l1">Infraestrutura estável.</span><span>Segurança que escala.</span></h1>
+    <div class="rule"></div>
+    <p class="lead">Analista Sênior de TI com mais de 18 anos de experiência, focado em estabilidade, performance e conformidade com a LGPD.</p>
+    <div class="feat"><div class="ring"><svg viewBox="0 0 24 24"><path d="M7 18a4 4 0 0 1-.5-7.97A5.5 5.5 0 0 1 17 8.5a4.75 4.75 0 0 1 .5 9.5z"/></svg></div>Cloud em<br>Microsoft Azure</div>
+    <div class="feat"><div class="ring"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 4.5-3.2 7.8-8 9-4.8-1.2-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div>Segurança com<br>Fortinet e Mikrotik</div>
+    <div class="feat"><div class="ring"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9l3 3-3 3M12 15h5"/></svg></div>Automação com<br>PowerShell e Batch</div>
+    <div class="cta">
+      <a class="btn btn-p" href="https://github.com/eduardogrigorio?tab=repositories" target="_blank" rel="noopener">Ver repositórios</a>
+      <a class="btn btn-s" href="#contato">Entrar em contato</a>
+    </div>
+  </div>
+  <div class="mock">
+    <div class="me"><div class="av">EG</div><div><strong>Eduardo Pena Grigorio</strong><small>@eduardogrigorio · GitHub</small></div></div>
+    <div class="stat hi"><small>Experiência em TI</small><div class="n">18+ anos</div><span class="up">↑ infraestrutura, segurança e cloud</span></div>
+    <div class="row">
+      <div class="stat"><small>Repositórios</small><div class="n">14</div><span class="up">↑ públicos</span></div>
+      <div class="stat"><small>Foco</small><div class="n">LGPD</div><span class="up">↑ conformidade</span></div>
+      <div class="stat"><small>Stack</small><div class="n">4</div><span class="up">↑ áreas de atuação</span></div>
+    </div>
+    <div class="chart">
+      <small style="color:var(--muted);font:500 13px var(--sans)">Evolução profissional</small>
+      <svg viewBox="0 0 400 110" aria-hidden="true">
+        <defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7a3a0f" stop-opacity=".9"/><stop offset="1" stop-color="#3a1c08" stop-opacity="0"/></linearGradient></defs>
+        <path d="M0 100 L50 88 L100 80 L150 70 L200 66 L250 48 L300 40 L350 22 L400 8 L400 110 L0 110Z" fill="url(#g)"/>
+        <path d="M0 100 L50 88 L100 80 L150 70 L200 66 L250 48 L300 40 L350 22 L400 8" fill="none" stroke="#f47b20" stroke-width="2.5" stroke-linejoin="round"/>
+        <g fill="#ff9a3d"><circle cx="100" cy="80" r="4"/><circle cx="200" cy="66" r="4"/><circle cx="300" cy="40" r="4"/><circle cx="396" cy="9" r="5"/></g>
+      </svg>
+    </div>
+    <svg class="arrow" viewBox="0 0 170 170" aria-hidden="true"><defs><linearGradient id="a" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#c95a0b"/><stop offset="1" stop-color="#ff9a3d"/></linearGradient></defs><path d="M10 160 C50 150 110 110 128 52 L108 52 L146 8 L164 66 L146 62 C128 120 70 156 10 160Z" fill="url(#a)"/></svg>
+  </div>
+</div></header>
+
+<section id="skills"><div class="wrap">
+  <h2>Mais estabilidade. <span>Mais resultados.</span></h2>
+  <p class="sub">Áreas em que atuo para manter ambientes seguros, rápidos e em conformidade.</p>
+  <div class="skills">
+    <div class="card"><span class="tag o">Cloud</span><h3>Microsoft Azure</h3><p>Conhecimentos em serviços e ambientes na nuvem.</p></div>
+    <div class="card"><span class="tag o">Segurança</span><h3>Fortinet</h3><p>Produtos Fortinet para proteção de rede e perímetro.</p></div>
+    <div class="card"><span class="tag o">Redes</span><h3>Mikrotik</h3><p>Configuração e administração de redes.</p></div>
+    <div class="card"><span class="tag o">Servidores</span><h3>Windows Server</h3><p>Administração de servidores e Active Directory.</p></div>
+  </div>
+</div></section>
+
+<section class="alt" id="projetos"><div class="wrap">
+  <h2>Projetos <span>em destaque</span></h2>
+  <p class="sub">Repositórios públicos do GitHub, direto da fonte.</p>
+  <div class="cards">
+    <a class="card" href="https://github.com/eduardogrigorio/habilidades.com.br" target="_blank" rel="noopener"><span class="tag">HTML</span><h3>habilidades.com.br</h3><p>Analista Sênior de TI com 18+ anos. Especialista em infraestrutura, segurança cibernética (Fortinet, Mikrotik) e cloud (Azure).</p><span class="up" style="color:var(--primary)">Ver no GitHub →</span></a>
+    <a class="card" href="https://github.com/eduardogrigorio/perfil" target="_blank" rel="noopener"><span class="tag">TypeScript</span><h3>perfil</h3><p>Repositório de perfil profissional.</p><span class="up" style="color:var(--primary)">Ver no GitHub →</span></a>
+    <a class="card" href="https://github.com/eduardogrigorio/Downloads" target="_blank" rel="noopener"><span class="tag">PowerShell</span><h3>Downloads</h3><p>Scripts e utilitários para download e instalação.</p><span class="up" style="color:var(--primary)">Ver no GitHub →</span></a>
+    <a class="card" href="https://github.com/eduardogrigorio/Kit-de-Ferramentas-para-Suporte" target="_blank" rel="noopener"><span class="tag">Suporte</span><h3>Kit de Ferramentas para Suporte</h3><p>Conjunto de ferramentas para o dia a dia do suporte técnico.</p><span class="up" style="color:var(--primary)">Ver no GitHub →</span></a>
+    <a class="card" href="https://github.com/eduardogrigorio/Gerenciamento-de-Contas-Active-Directory---PowerShell-Guide" target="_blank" rel="noopener"><span class="tag">PowerShell</span><h3>Gerenciamento de Contas AD</h3><p>Comandos PowerShell essenciais para desbloqueio, habilitação e verificação de usuários no Active Directory.</p><span class="up" style="color:var(--primary)">Ver no GitHub →</span></a>
+    <a class="card" href="https://github.com/eduardogrigorio/Play-Script-PowerShell" target="_blank" rel="noopener"><span class="tag">Batchfile</span><h3>Play-Script-PowerShell</h3><p>Scripts operacionais para ajudar no dia a dia do TI.</p><span class="up" style="color:var(--primary)">Ver no GitHub →</span></a>
+  </div>
+</div></section>
+
+<section id="contato"><div class="wrap">
+  <div class="band">
+    <h2>Precisa de infraestrutura que escala?</h2>
+    <a class="btn" href="https://github.com/eduardogrigorio" target="_blank" rel="noopener">Falar pelo GitHub</a>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <span class="logo">eduardo<b>grigorio</b></span>
+  <span>© 2026 Eduardo Pena Grigorio · Infraestrutura, Segurança e Cloud</span>
+</div></footer>
+</body>
+</html>
