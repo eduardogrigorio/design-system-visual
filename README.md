@@ -77,6 +77,28 @@ ERROR        #e5484d   erros
 
 A profundidade deve vir principalmente da diferença entre superfícies, do contraste e do brilho laranja. Evite adicionar cores ou padrões que criem uma identidade paralela sem justificativa.
 
+## Exemplos de aplicação
+
+As imagens abaixo mostram duas aplicações diferentes utilizando a mesma linguagem visual: uma landing page institucional e um sistema desktop de monitoramento.
+
+### Landing page institucional
+
+<p align="center">
+  <img src="./Landing%20Page.JPG" alt="Exemplo de landing page com o design system laranja" width="900">
+</p>
+
+A landing page utiliza fundo escuro, títulos em branco e laranja, cards grafite, indicadores em verde, navegação superior e chamadas para ação com destaque laranja.
+
+### Sistema desktop de monitoramento
+
+<p align="center">
+  <img src="./assets_monitor.JPG" alt="Exemplo de sistema desktop de monitoramento com o design system laranja" width="900">
+</p>
+
+O sistema de monitoramento adapta os mesmos princípios para uma aplicação operacional: cards de métricas, campos de entrada, botões, status, tabela e alertas.
+
+Esses exemplos demonstram que o template não é limitado a um único produto. A mesma base visual pode atender diferentes modelos e funções sem perder identidade.
+
 ## Padrão técnico
 
 Para aplicações desktop desenvolvidas em Python, a tecnologia preferencial é:
@@ -187,12 +209,16 @@ Depois, converta as decisões do guia em componentes, layouts e estilos adequado
 Template System/
 ├── README.md
 ├── design-orange-system.md
-└── Perfil GitHub.html
+├── Perfil GitHub.html
+├── Landing Page.JPG
+└── assets_monitor.JPG
 ```
 
 - `README.md`: apresentação e instruções de uso do template.
 - `design-orange-system.md`: fonte oficial das decisões visuais.
 - `Perfil GitHub.html`: material complementar do projeto.
+- `Landing Page.JPG`: exemplo visual de uma landing page institucional.
+- `assets_monitor.JPG`: exemplo visual de um sistema desktop de monitoramento.
 
 ## Evolução
 
