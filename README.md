@@ -1,26 +1,83 @@
+<div align="center">
+
 # Template System
 
-Design system visual e técnico para criação de sistemas modernos, consistentes e reutilizáveis.
+### Um design system visual para criar sistemas consistentes em qualquer área
 
-Este repositório funciona como uma base visual comum para diferentes tipos de sistemas, modelos de negócio e funções. Seu objetivo é evitar que cada projeto comece do zero e garantir que as interfaces mantenham uma identidade profissional, organizada e coerente, independentemente da tecnologia ou do domínio da aplicação.
+<p>
+  <a href="./design-orange-system.md"><img src="https://img.shields.io/badge/Design%20System-Orange-f47b20?style=for-the-badge&labelColor=0d0d0d" alt="Design System"></a>
+  <a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-0d0d0d?style=for-the-badge&logo=python&logoColor=f47b20" alt="Python"></a>
+  <a href="https://www.riverbankcomputing.com/software/pyqt/"><img src="https://img.shields.io/badge/PyQt6-Preferred-4caf50?style=for-the-badge&labelColor=0d0d0d" alt="PyQt6"></a>
+  <a href="./design-orange-system.md"><img src="https://img.shields.io/badge/AI%20Ready-222222?style=for-the-badge&logo=openai&logoColor=ff9a3d" alt="AI Ready"></a>
+</p>
 
-## Para que serve
+<p>
+  <strong>Uma base visual comum para aplicações desktop, web, mobile, dashboards e ferramentas internas.</strong>
+</p>
 
-O `template_system` pode ser usado por desenvolvedores, equipes de produto e ferramentas de Inteligência Artificial que precisam criar qualquer tipo de interface com um modelo de design já definido. O padrão pode ser adaptado para sistemas administrativos, financeiros, comerciais, técnicos, educacionais, operacionais, dashboards, ferramentas internas, aplicações desktop, web e mobile.
+</div>
 
-Ele serve como referência para:
+---
 
-- criação de sistemas para diferentes áreas e finalidades;
-- criação de novos sistemas Python;
-- geração de interfaces PyQt6 por IAs;
-- adaptação do mesmo padrão para aplicações web, mobile e outras plataformas;
-- padronização de cores, tipografia e espaçamentos;
-- definição de botões, cards, campos, menus e painéis;
-- criação de dashboards e telas administrativas;
-- manutenção de uma identidade visual comum entre projetos;
-- evolução de componentes reutilizáveis ao longo do tempo.
+## O que é este repositório?
 
-## Padrão técnico e adaptação por plataforma
+O `template_system` é um **design system visual e técnico** para orientar a criação de diferentes tipos de sistemas, modelos de negócio e funções.
+
+Ele existe para que cada novo projeto não precise começar do zero. A interface pode mudar de finalidade e de tecnologia, mas deve manter uma linguagem visual profissional, organizada e coerente.
+
+> **Ideia central:** uma mesma identidade visual pode ser adaptada para diferentes produtos sem perder consistência.
+
+## Onde utilizar
+
+<table>
+  <tr>
+    <td><strong>Sistemas administrativos</strong><br>Operação, gestão e backoffice.</td>
+    <td><strong>Dashboards</strong><br>Indicadores, métricas e relatórios.</td>
+    <td><strong>Ferramentas internas</strong><br>Fluxos técnicos e operacionais.</td>
+  </tr>
+  <tr>
+    <td><strong>Sistemas comerciais</strong><br>Vendas, clientes e processos.</td>
+    <td><strong>Aplicações desktop</strong><br>Python e PyQt6.</td>
+    <td><strong>Aplicações web e mobile</strong><br>Adaptação dos mesmos tokens visuais.</td>
+  </tr>
+</table>
+
+## A fonte visual oficial
+
+Toda a identidade do template está documentada em [`design-orange-system.md`](./design-orange-system.md).
+
+O guia define:
+
+- paleta escura com preto quente, grafite, branco e laranja;
+- cores semânticas para sucesso, alerta e erro;
+- tipografia e hierarquia visual;
+- espaçamento baseado em múltiplos de 4 pixels;
+- raios de borda e níveis de elevação;
+- cards, botões, campos, menus e navegação;
+- brilho, contraste, profundidade e uso de ícones;
+- adaptação para diferentes fluxos, modelos e funções.
+
+Antes de criar uma nova tela, consulte o guia visual.
+
+## Linguagem visual
+
+```text
+CANVAS       #0d0d0d   preto quente de fundo
+SURFACE      #141414   superfícies discretas
+CARD         #1a1a1a   cards principais
+CARD ELEVATED#222222   cards em destaque
+PRIMARY      #f47b20   laranja de ação
+PRIMARY GLOW #ff9a3d   brilho e destaque
+INK          #ffffff   títulos e textos principais
+BODY         #d9d9d9   texto corrido
+SUCCESS      #4caf50   estados positivos
+WARNING      #e8a02a   alertas
+ERROR        #e5484d   erros
+```
+
+A profundidade deve vir principalmente da diferença entre superfícies, do contraste e do brilho laranja. Evite adicionar cores ou padrões que criem uma identidade paralela sem justificativa.
+
+## Padrão técnico
 
 Para aplicações desktop desenvolvidas em Python, a tecnologia preferencial é:
 
@@ -28,88 +85,62 @@ Para aplicações desktop desenvolvidas em Python, a tecnologia preferencial é:
 Python + PyQt6 + Qt Style Sheets (QSS)
 ```
 
-O PyQt6 deve ser priorizado quando o projeto for um sistema desktop em Python. Para sistemas web, mobile ou desenvolvidos com outra tecnologia, o guia visual continua sendo a referência; seus tokens, componentes, cores, tipografia e espaçamentos devem ser adaptados à plataforma escolhida sem perder a identidade do design system.
+O PyQt6 deve ser priorizado para sistemas desktop em Python. Em aplicações web, mobile ou projetos desenvolvidos com outra tecnologia, os mesmos tokens, componentes, cores, tipografia e espaçamentos devem ser adaptados à plataforma escolhida.
 
-## Guia visual oficial
-
-O arquivo [`design-orange-system.md`](./design-orange-system.md) é a fonte principal das decisões visuais do template.
-
-Ele define, entre outros elementos:
-
-- paleta escura com preto quente, grafite, branco e laranja;
-- cores semânticas para sucesso, alerta e erro;
-- tipografia e hierarquia de títulos;
-- espaçamento baseado em múltiplos de 4 pixels;
-- raios de borda e níveis de elevação;
-- regras para cards, botões, campos e navegação;
-- princípios de profundidade, brilho e contraste;
-- orientação para ícones e ilustrações;
-- estrutura visual de dashboards e sistemas administrativos;
-- adaptação para diferentes modelos de sistemas, fluxos e funções.
-
-Ao iniciar um novo projeto, o arquivo `design-orange-system.md` deve ser consultado antes da criação da interface.
+| Plataforma | Aplicação do template |
+|---|---|
+| Python desktop | PyQt6, widgets, layouts e QSS |
+| Web | Componentes, CSS e tokens equivalentes |
+| Mobile | Componentes nativos ou framework escolhido, mantendo a linguagem visual |
+| Dashboard | Cards, métricas, tabelas, gráficos e estados semânticos |
+| Ferramenta interna | Fluxos operacionais, formulários e painéis reutilizáveis |
 
 ## Uso por Inteligências Artificiais
 
-Este repositório foi criado para ser compreendido e utilizado por IAs que geram código, interfaces e sistemas completos de diferentes tipos. Ele pode ser incluído como contexto de design em projetos desktop, web, mobile, dashboards, ferramentas administrativas ou qualquer aplicação que precise de uma identidade visual consistente.
+O repositório foi estruturado para ser usado como contexto por IAs que geram código, interfaces e sistemas completos.
 
-Uma IA pode usar este template como contexto de design para:
+Uma IA deve usar este template para:
 
-1. identificar a identidade visual do projeto;
-2. escolher as cores corretas;
-3. manter a hierarquia tipográfica;
-4. criar componentes PyQt6 consistentes quando o projeto for desktop em Python;
-5. transformar tokens visuais em estilos QSS ou no mecanismo equivalente da plataforma;
-6. adaptar os mesmos tokens para a tecnologia da aplicação;
-7. produzir telas novas sem quebrar o padrão existente;
-8. reutilizar a mesma linguagem visual em diferentes sistemas.
+1. identificar a identidade visual antes de escrever a interface;
+2. escolher as cores e os estados semânticos corretos;
+3. manter a hierarquia tipográfica e o espaçamento;
+4. criar componentes reutilizáveis;
+5. converter tokens para QSS, CSS ou o mecanismo da plataforma;
+6. adaptar o sistema para sua área e função;
+7. evitar estilos isolados que quebrem o padrão;
+8. documentar qualquer alteração global no design system.
 
-### Prompt recomendado para uma IA
-
-```text
-Use este repositório como template visual e técnico para o novo sistema.
-
-Para sistemas desktop em Python, use PyQt6 como tecnologia de interface.
-Para outros tipos de sistemas, adapte o design system à plataforma escolhida.
-
-Leia o arquivo design-orange-system.md antes de criar qualquer tela.
-Respeite a paleta, a tipografia, os espaçamentos, os raios, os componentes
- e os princípios de layout definidos no guia. Crie componentes reutilizáveis,
-separe a lógica da interface e mantenha a identidade visual consistente.
-Não invente uma nova paleta ou um novo padrão visual sem justificar a mudança.
-```
-
-## Estrutura atual
+### Prompt recomendado
 
 ```text
-Template System/
-├── README.md
-├── design-orange-system.md
-└── Perfil GitHub.html
+Use este repositório como design system visual e técnico do novo projeto.
+
+Leia o arquivo design-orange-system.md antes de criar a interface.
+Identifique o tipo de sistema, a plataforma e as funções principais.
+
+Se for uma aplicação desktop em Python, use PyQt6 e QSS.
+Se for outra plataforma, adapte os tokens e componentes para a tecnologia escolhida.
+
+Respeite a paleta, a tipografia, os espaçamentos, os raios, os estados,
+os componentes e os princípios de layout definidos no guia.
+Crie componentes reutilizáveis, separe interface e lógica e mantenha a identidade
+visual consistente. Não crie uma nova paleta sem justificar a decisão.
 ```
 
-### Arquivos
+## Diretrizes de implementação
 
-- `README.md`: apresentação, objetivo e instruções de uso do template.
-- `design-orange-system.md`: guia visual oficial e fonte de referência para as interfaces.
-- `Perfil GitHub.html`: material complementar relacionado ao perfil do projeto.
+Todo projeto baseado neste template deve, sempre que possível:
 
-## Diretrizes para novos projetos
-
-Todo novo sistema baseado neste repositório, independentemente do seu modelo ou função, deve, sempre que possível:
-
-- usar PyQt6 quando for uma aplicação desktop em Python;
-- separar a apresentação, a lógica e o acesso a dados;
-- transformar as cores e medidas do guia em constantes ou tokens reutilizáveis;
-- centralizar os estilos QSS em projetos PyQt6 ou utilizar o mecanismo equivalente da plataforma escolhida;
-- evitar estilos espalhados diretamente pelos componentes;
+- separar apresentação, lógica e acesso a dados;
+- centralizar cores, medidas e tokens;
 - reutilizar componentes antes de criar variações isoladas;
-- manter a interface responsiva ao redimensionamento da janela;
 - validar estados normal, ativo, desabilitado, foco, erro e sucesso;
-- preservar acessibilidade, contraste e legibilidade;
-- documentar qualquer alteração significativa no design system.
+- manter a interface responsiva ao redimensionamento;
+- preservar contraste, legibilidade e acessibilidade;
+- evitar estilos espalhados diretamente pelos componentes;
+- documentar mudanças que afetem vários projetos.
 
-## Exemplo de organização recomendada
+## Estrutura recomendada para Python e PyQt6
 
 ```text
 meu_sistema/
@@ -130,32 +161,51 @@ meu_sistema/
 
 ## Como utilizar
 
-Clone o repositório ou utilize o conteúdo do guia como referência no novo projeto:
+Clone o template:
 
 ```bash
 git clone https://github.com/eduardogrigorio/template_system.git
 ```
 
-Depois, leia o guia de design:
+Leia primeiro o guia visual:
 
 ```text
 design-orange-system.md
 ```
 
-Em um projeto desktop Python com PyQt6, instale a dependência principal:
+Para um projeto desktop Python com PyQt6:
 
 ```bash
 pip install PyQt6
 ```
 
-A implementação final deve converter as decisões do guia em componentes, layouts e estilos adequados à tecnologia do sistema criado. Em projetos PyQt6, isso significa utilizar widgets, layouts e QSS; em outras plataformas, devem ser utilizados os componentes equivalentes.
+Depois, converta as decisões do guia em componentes, layouts e estilos adequados ao sistema. Em PyQt6, utilize widgets, layouts e QSS; em outras plataformas, utilize os equivalentes tecnológicos.
 
-## Evolução do template
+## Estrutura do repositório
 
-Este repositório é uma base viva. Novos componentes, padrões e exemplos podem ser adicionados conforme surgirem novos sistemas e necessidades de interface.
+```text
+Template System/
+├── README.md
+├── design-orange-system.md
+└── Perfil GitHub.html
+```
 
-Antes de incluir uma mudança global, avalie o impacto sobre os projetos que utilizam este template. Alterações de cores, tipografia, espaçamento ou componentes devem ser documentadas para que as IAs e os desenvolvedores consigam aplicar a nova versão corretamente.
+- `README.md`: apresentação e instruções de uso do template.
+- `design-orange-system.md`: fonte oficial das decisões visuais.
+- `Perfil GitHub.html`: material complementar do projeto.
 
-## Licença e uso
+## Evolução
 
-Este repositório funciona como um template de referência para os projetos do autor e para ferramentas de IA que precisem de um modelo visual e técnico. Verifique a licença e os direitos de qualquer recurso externo antes de incorporá-lo a um projeto distribuído.
+Este é um design system vivo. Novos componentes, padrões e exemplos podem ser adicionados conforme surgirem novos sistemas e necessidades.
+
+Antes de alterar cores, tipografia, espaçamento ou componentes globais, avalie o impacto sobre os projetos que utilizam este template e documente a mudança.
+
+## Uso e direitos
+
+Este repositório é uma referência visual e técnica para projetos do autor, desenvolvedores e ferramentas de IA. Verifique a licença e os direitos de qualquer recurso externo antes de incorporá-lo a um produto distribuído.
+
+<div align="center">
+
+**Uma identidade visual. Vários sistemas. Diferentes funções.**
+
+</div>
