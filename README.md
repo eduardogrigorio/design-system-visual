@@ -1,6 +1,6 @@
 <div align="center">
 
-# Template System
+# Design System Visual
 
 ### Um design system visual para criar sistemas consistentes em qualquer área
 
@@ -21,7 +21,7 @@
 
 ## O que é este repositório?
 
-O `template_system` é um **design system visual e técnico** para orientar a criação de diferentes tipos de sistemas, modelos de negócio e funções.
+O `design-system-visual` é um **design system visual e técnico** para orientar a criação de diferentes tipos de sistemas, modelos de negócio e funções.
 
 Ele existe para que cada novo projeto não precise começar do zero. A interface pode mudar de finalidade e de tecnologia, mas deve manter uma linguagem visual profissional, organizada e coerente.
 
@@ -284,7 +284,7 @@ meu_sistema/
 Clone o template:
 
 ```bash
-git clone https://github.com/eduardogrigorio/template_system.git
+git clone https://github.com/eduardogrigorio/design-system-visual.git
 ```
 
 Leia primeiro o guia visual:
