@@ -44,11 +44,20 @@ Ele existe para que cada novo projeto não precise começar do zero. A interface
 
 ## A fonte visual oficial
 
-Toda a identidade do template está documentada em [`design-orange-system.md`](./design-orange-system.md).
+Toda a identidade do template está documentada no modelo base [`design-orange-system.md`](./design-orange-system.md). Também existem três variações que preservam a mesma estrutura e substituem somente a cor de destaque:
+
+| Modelo | Arquivo | Cor de destaque |
+|---|---|---|
+| Laranja, modelo base | [`design-orange-system.md`](./design-orange-system.md) | `#f47b20` |
+| Verde | [`design-green-system.md`](./design-green-system.md) | `#008624` |
+| Azul | [`design-blue-system.md`](./design-blue-system.md) | `#0059a8` |
+| Preto | [`design-black-system.md`](./design-black-system.md) | `#000000` |
+
+Escolha um único modelo para cada projeto. As variantes mantêm layout, tipografia, espaçamento, raios, componentes e estados. Os tons ativo, brilho e desabilitado são derivados da cor principal para manter os estados visuais coerentes. No modelo preto, o texto sobre a cor de destaque usa branco para preservar o contraste.
 
 O guia define:
 
-- paleta escura com preto quente, grafite, branco e laranja;
+- paleta escura com preto quente, grafite, branco e a cor de destaque do modelo escolhido;
 - cores semânticas para sucesso, alerta e erro;
 - tipografia e hierarquia visual;
 - espaçamento baseado em múltiplos de 4 pixels;
@@ -150,7 +159,7 @@ Se a plataforma ou a linguagem ainda não estiver definida, primeiro descreva o 
 
 Consulte nesta ordem:
 
-1. [`design-orange-system.md`](./design-orange-system.md), para conhecer cores, tipografia, espaçamentos, raios, componentes e estados;
+1. o arquivo do modelo escolhido — [`design-orange-system.md`](./design-orange-system.md), [`design-green-system.md`](./design-green-system.md), [`design-blue-system.md`](./design-blue-system.md) ou [`design-black-system.md`](./design-black-system.md) — para conhecer cores, tipografia, espaçamentos, raios, componentes e estados;
 2. as imagens de exemplo do README, para observar a aplicação visual em diferentes contextos;
 3. este passo a passo, para transformar as decisões visuais em código, configuração ou componentes da ferramenta escolhida.
 
@@ -224,7 +233,7 @@ O conteúdo e o fluxo podem mudar completamente entre um sistema financeiro, um 
 Use este checklist em qualquer tecnologia:
 
 - [ ] o fundo usa o preto quente e as superfícies corretas;
-- [ ] o laranja é usado como destaque, não em excesso;
+- [ ] a cor de destaque escolhida é usada com moderação;
 - [ ] textos, títulos e números têm hierarquia clara;
 - [ ] espaçamentos e raios seguem os tokens;
 - [ ] botões, campos, tabelas e cards possuem estados compreensíveis;
@@ -239,7 +248,7 @@ Use este checklist em qualquer tecnologia:
 
 Este processo funciona em ChatGPT, Claude, Gemini, Copilot ou outra IA capaz de analisar instruções e gerar código:
 
-1. envie o link deste repositório ou os arquivos `README.md` e `design-orange-system.md`;
+1. envie o link deste repositório ou os arquivos `README.md` e o arquivo do modelo escolhido;
 2. informe o objetivo do sistema usando a ficha do Passo 1;
 3. peça primeiro um plano de telas, componentes e tokens — não o projeto inteiro de uma vez;
 4. peça a implementação de uma tela ou componente por vez;
@@ -281,7 +290,7 @@ Antes de escrever código, a IA deve identificar:
 
 #### 2. Ler o guia visual
 
-A IA deve abrir o [`design-orange-system.md`](./design-orange-system.md) e extrair os tokens relevantes:
+A IA deve abrir o arquivo do modelo escolhido e extrair os tokens relevantes. Os modelos disponíveis são [`design-orange-system.md`](./design-orange-system.md), [`design-green-system.md`](./design-green-system.md), [`design-blue-system.md`](./design-blue-system.md) e [`design-black-system.md`](./design-black-system.md):
 
 - cores de fundo, superfície, texto e estados;
 - tipografia e hierarquia de títulos;
@@ -293,7 +302,7 @@ A IA deve abrir o [`design-orange-system.md`](./design-orange-system.md) e extra
 
 As imagens `Landing Page.JPG`, `assets_monitor.JPG` e `Google Sheets.JPG` mostram como a mesma identidade visual pode ser aplicada em produtos e plataformas diferentes. A IA deve observar a linguagem visual dos exemplos, mas adaptar a estrutura à finalidade do novo sistema.
 
-O objetivo não é copiar a landing page ou o monitor de ações. O objetivo é reutilizar os princípios: fundo escuro, contraste, destaque laranja, cards organizados, estados semânticos e hierarquia clara.
+O objetivo não é copiar a landing page ou o monitor de ações. O objetivo é reutilizar os princípios: fundo escuro, contraste, cor de destaque escolhida, cards organizados, estados semânticos e hierarquia clara.
 
 #### 4. Escolher a implementação
 
@@ -367,7 +376,7 @@ Se o sistema exigir uma cor, componente ou fluxo que não exista no guia, a IA d
 
 ```text
 Use este repositório como referência visual e técnica do novo projeto.
-Leia README.md e design-orange-system.md antes de propor ou escrever código.
+Leia README.md e o arquivo do modelo escolhido antes de propor ou escrever código.
 
 Projeto: [descreva o sistema]
 Usuários: [descreva os usuários]
@@ -431,11 +440,16 @@ Clone o template:
 git clone https://github.com/eduardogrigorio/design-system-visual.git
 ```
 
-Leia primeiro o guia visual:
+Escolha e leia primeiro um dos guias visuais:
 
 ```text
 design-orange-system.md
+design-green-system.md
+design-blue-system.md
+design-black-system.md
 ```
+
+Use apenas um modelo por projeto. Se quiser trocar a identidade visual, substitua o arquivo de tokens e mantenha os componentes e a estrutura da aplicação.
 
 Para um projeto desktop Python com PyQt6:
 
@@ -451,6 +465,9 @@ Depois, converta as decisões do guia em componentes, layouts e estilos adequado
 Template System/
 ├── README.md
 ├── design-orange-system.md
+├── design-green-system.md
+├── design-blue-system.md
+├── design-black-system.md
 ├── Perfil GitHub.html
 ├── Google Sheets.JPG
 ├── Landing Page.JPG
@@ -459,6 +476,9 @@ Template System/
 
 - `README.md`: apresentação e instruções de uso do template.
 - `design-orange-system.md`: fonte oficial das decisões visuais.
+- `design-green-system.md`: variação com destaque verde `#008624`.
+- `design-blue-system.md`: variação com destaque azul `#0059a8`.
+- `design-black-system.md`: variação monocromática com destaque preto `#000000`.
 - `Perfil GitHub.html`: material complementar do projeto.
 - `Google Sheets.JPG`: exemplo de dashboard de auditoria de PIX em uma planilha.
 - `Landing Page.JPG`: exemplo visual de uma landing page institucional.
