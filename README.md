@@ -125,6 +125,131 @@ O PyQt6 deve ser priorizado para sistemas desktop em Python. Em aplicações web
 | Dashboard | Cards, métricas, tabelas, gráficos e estados semânticos |
 | Ferramenta interna | Fluxos operacionais, formulários e painéis reutilizáveis |
 
+## Guia universal: como aplicar em qualquer projeto
+
+Este design system é **agnóstico de plataforma, linguagem e ferramenta**. Ele pode orientar um sistema web, desktop, mobile, dashboard, planilha, protótipo, aplicação no-code ou uma interface criada com ajuda de qualquer IA. O que deve ser preservado é a linguagem visual e a lógica dos componentes; a sintaxe e a tecnologia podem mudar.
+
+### Passo 1 — Defina o projeto antes de criar a tela
+
+Preencha estas informações em poucas linhas:
+
+```text
+Nome do projeto:
+Tipo de sistema: site, painel, cadastro, vendas, financeiro, suporte etc.
+Usuários principais:
+Plataforma: web, desktop, mobile, planilha ou outra.
+Linguagem e framework: se já estiverem definidos.
+Principais ações: consultar, cadastrar, editar, aprovar, exportar etc.
+Telas necessárias:
+Restrições: responsividade, acessibilidade, integração, prazo ou dispositivo.
+```
+
+Se a plataforma ou a linguagem ainda não estiver definida, primeiro descreva o objetivo do sistema. A tecnologia pode ser escolhida depois, sem alterar os princípios visuais.
+
+### Passo 2 — Abra o guia e os exemplos
+
+Consulte nesta ordem:
+
+1. [`design-orange-system.md`](./design-orange-system.md), para conhecer cores, tipografia, espaçamentos, raios, componentes e estados;
+2. as imagens de exemplo do README, para observar a aplicação visual em diferentes contextos;
+3. este passo a passo, para transformar as decisões visuais em código, configuração ou componentes da ferramenta escolhida.
+
+Não copie uma tela inteira sem entender sua finalidade. Reaproveite os princípios e adapte o conteúdo, o fluxo e o layout ao problema real.
+
+### Passo 3 — Converta os tokens para a tecnologia escolhida
+
+Crie uma única fonte de verdade para as decisões visuais. Os mesmos tokens podem ser escritos de formas diferentes:
+
+| Contexto | Onde colocar os tokens |
+|---|---|
+| HTML, CSS, Vue ou web em geral | variáveis CSS, tema ou arquivo de estilos |
+| React, Angular ou TypeScript | objeto de tema, constantes ou design tokens |
+| Python, PyQt, Tkinter ou desktop | módulo de constantes, tema e arquivo de estilos |
+| Flutter, React Native ou mobile nativo | tema, arquivo de constantes ou componentes compartilhados |
+| Java, .NET, Qt ou outra aplicação desktop | classe de tema, recursos e estilos da plataforma |
+| Figma, no-code ou planilha | variáveis, estilos, cores e regras documentadas |
+
+Exemplo de tokens em CSS. Em outra linguagem, mantenha os mesmos nomes e valores, adaptando apenas a sintaxe:
+
+```css
+:root {
+  --canvas: #0d0d0d;
+  --surface-card: #1a1a1a;
+  --surface-elevated: #222222;
+  --primary: #f47b20;
+  --primary-glow: #ff9a3d;
+  --text: #ffffff;
+  --body: #d9d9d9;
+  --muted: #8a8a8a;
+  --success: #4caf50;
+  --warning: #e8a02a;
+  --error: #e5484d;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --space-md: 16px;
+  --space-lg: 24px;
+}
+```
+
+Regra simples: **não espalhe valores hexadecimais, tamanhos ou raios diretamente pelas telas**. Consulte os tokens e altere a fonte central quando uma decisão global for necessária.
+
+### Passo 4 — Crie os componentes antes das telas
+
+Comece pelos componentes compartilhados e só depois monte as páginas ou janelas:
+
+1. estrutura de página, container, cabeçalho, navegação e rodapé;
+2. tipografia, botões, links e ícones;
+3. campos, seleção, filtros e formulários;
+4. cards, tabelas, métricas, gráficos e badges;
+5. mensagens, alertas, diálogos, carregamento, vazio e erro.
+
+Todo componente deve ter apenas os estados que fazem sentido para seu uso: normal, hover ou ativo, foco, desabilitado, carregando, sucesso, aviso e erro. Em uma planilha ou ferramenta no-code, esses componentes podem ser representados por abas, células formatadas, validações, cartões ou estilos salvos.
+
+### Passo 5 — Monte cada tela em uma sequência curta
+
+Para cada tela, siga esta ordem:
+
+1. defina a ação principal e a informação mais importante;
+2. escolha a estrutura de layout adequada à plataforma;
+3. aplique fundo, superfícies, espaçamento e hierarquia tipográfica;
+4. reutilize os componentes já criados;
+5. adicione dados reais ou dados de exemplo plausíveis;
+6. trate estados de carregamento, vazio, sucesso, aviso e erro;
+7. adapte o comportamento a diferentes tamanhos de tela ou janelas, quando aplicável.
+
+O conteúdo e o fluxo podem mudar completamente entre um sistema financeiro, um CRM ou um painel de infraestrutura. A identidade visual, os tokens e os estados dos componentes devem continuar coerentes.
+
+### Passo 6 — Valide antes de considerar pronto
+
+Use este checklist em qualquer tecnologia:
+
+- [ ] o fundo usa o preto quente e as superfícies corretas;
+- [ ] o laranja é usado como destaque, não em excesso;
+- [ ] textos, títulos e números têm hierarquia clara;
+- [ ] espaçamentos e raios seguem os tokens;
+- [ ] botões, campos, tabelas e cards possuem estados compreensíveis;
+- [ ] sucesso, aviso e erro usam as cores semânticas corretas;
+- [ ] há contraste e legibilidade suficientes;
+- [ ] a interface funciona no tamanho de tela ou janela esperado;
+- [ ] teclado, toque e foco são considerados quando aplicável;
+- [ ] não existem estilos isolados que criem uma identidade paralela;
+- [ ] exceções foram registradas e justificadas.
+
+### Fluxo fácil usando qualquer IA
+
+Este processo funciona em ChatGPT, Claude, Gemini, Copilot ou outra IA capaz de analisar instruções e gerar código:
+
+1. envie o link deste repositório ou os arquivos `README.md` e `design-orange-system.md`;
+2. informe o objetivo do sistema usando a ficha do Passo 1;
+3. peça primeiro um plano de telas, componentes e tokens — não o projeto inteiro de uma vez;
+4. peça a implementação de uma tela ou componente por vez;
+5. execute o resultado, observe uma imagem ou erro e envie esse retorno à IA;
+6. peça a correção sem permitir que a IA crie uma nova paleta sem justificativa;
+7. depois de validar a primeira tela, peça a reutilização dos mesmos componentes nas demais;
+8. ao final, peça uma revisão usando o checklist acima.
+
+O melhor resultado vem de ciclos curtos: **planejar → implementar → visualizar → corrigir → reutilizar**.
+
 ## Uso por Inteligências Artificiais
 
 O repositório foi estruturado para ser usado como contexto por IAs que geram código, interfaces e sistemas completos.
@@ -238,21 +363,32 @@ Antes de considerar o trabalho pronto, a IA deve verificar:
 
 Se o sistema exigir uma cor, componente ou fluxo que não exista no guia, a IA deve explicar a necessidade, registrar a decisão e evitar alterar o padrão global sem avaliar o impacto nos demais projetos.
 
-### Prompt recomendado
+### Prompt universal recomendado
 
 ```text
-Use este repositório como design system visual e técnico do novo projeto.
+Use este repositório como referência visual e técnica do novo projeto.
+Leia README.md e design-orange-system.md antes de propor ou escrever código.
 
-Leia o arquivo design-orange-system.md antes de criar a interface.
-Identifique o tipo de sistema, a plataforma e as funções principais.
+Projeto: [descreva o sistema]
+Usuários: [descreva os usuários]
+Plataforma: [web, desktop, mobile, dashboard, planilha ou outra]
+Linguagem/framework: [informe ou escolha a opção mais adequada]
+Telas e ações principais: [liste as telas e ações]
 
-Se for uma aplicação desktop em Python, use PyQt6 e QSS.
-Se for outra plataforma, adapte os tokens e componentes para a tecnologia escolhida.
+Antes de implementar:
+1. identifique a finalidade, os usuários, a plataforma e os fluxos;
+2. proponha a estrutura de telas e os componentes reutilizáveis;
+3. mapeie os tokens do design system para a linguagem escolhida;
+4. aponte qualquer suposição ou informação que esteja faltando.
 
-Respeite a paleta, a tipografia, os espaçamentos, os raios, os estados,
-os componentes e os princípios de layout definidos no guia.
-Crie componentes reutilizáveis, separe interface e lógica e mantenha a identidade
-visual consistente. Não crie uma nova paleta sem justificar a decisão.
+Depois implemente uma etapa por vez, começando pela base visual e por uma tela.
+Preserve cores, tipografia, espaçamentos, raios, estados, contraste e hierarquia
+definidos no guia. Separe interface, lógica e dados quando a tecnologia permitir.
+Use os equivalentes nativos da plataforma, sem inventar uma nova paleta.
+Se uma exceção for necessária, justifique-a e registre-a.
+
+Entregue sempre: arquivos alterados, instruções para executar, estados tratados
+e uma lista curta do que deve ser validado visualmente.
 ```
 
 ## Diretrizes de implementação
