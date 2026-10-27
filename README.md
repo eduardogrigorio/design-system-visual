@@ -79,7 +79,7 @@ A profundidade deve vir principalmente da diferença entre superfícies, do cont
 
 ## Exemplos de aplicação
 
-As imagens abaixo mostram duas aplicações diferentes utilizando a mesma linguagem visual: uma landing page institucional e um sistema desktop de monitoramento.
+As imagens abaixo mostram três aplicações diferentes utilizando a mesma linguagem visual: uma landing page institucional, um sistema desktop de monitoramento e um dashboard de auditoria no Google Sheets.
 
 ### Landing page institucional
 
@@ -97,7 +97,15 @@ A landing page utiliza fundo escuro, títulos em branco e laranja, cards grafite
 
 O sistema de monitoramento adapta os mesmos princípios para uma aplicação operacional: cards de métricas, campos de entrada, botões, status, tabela e alertas.
 
-Esses exemplos demonstram que o template não é limitado a um único produto. A mesma base visual pode atender diferentes modelos e funções sem perder identidade.
+### Dashboard de auditoria no Google Sheets
+
+<p align="center">
+  <img src="./Google%20Sheets.JPG" alt="Exemplo de dashboard de auditoria de PIX no Google Sheets com o design system laranja" width="700">
+</p>
+
+O dashboard de auditoria de PIX aplica a mesma linguagem visual a planilhas e relatórios: fundo escuro, indicadores em cards, estados semânticos, tabelas e gráficos com destaque laranja.
+
+Esses exemplos demonstram que o template não é limitado a um único produto ou plataforma. A mesma base visual pode atender diferentes modelos e funções sem perder identidade.
 
 ## Padrão técnico
 
@@ -158,7 +166,7 @@ A IA deve abrir o [`design-orange-system.md`](./design-orange-system.md) e extra
 
 #### 3. Consultar os exemplos
 
-As imagens `Landing Page.JPG` e `assets_monitor.JPG` mostram como a mesma identidade visual pode ser aplicada em produtos diferentes. A IA deve observar a linguagem visual dos exemplos, mas adaptar a estrutura à finalidade do novo sistema.
+As imagens `Landing Page.JPG`, `assets_monitor.JPG` e `Google Sheets.JPG` mostram como a mesma identidade visual pode ser aplicada em produtos e plataformas diferentes. A IA deve observar a linguagem visual dos exemplos, mas adaptar a estrutura à finalidade do novo sistema.
 
 O objetivo não é copiar a landing page ou o monitor de ações. O objetivo é reutilizar os princípios: fundo escuro, contraste, destaque laranja, cards organizados, estados semânticos e hierarquia clara.
 
@@ -308,6 +316,7 @@ Template System/
 ├── README.md
 ├── design-orange-system.md
 ├── Perfil GitHub.html
+├── Google Sheets.JPG
 ├── Landing Page.JPG
 └── assets_monitor.JPG
 ```
@@ -315,6 +324,7 @@ Template System/
 - `README.md`: apresentação e instruções de uso do template.
 - `design-orange-system.md`: fonte oficial das decisões visuais.
 - `Perfil GitHub.html`: material complementar do projeto.
+- `Google Sheets.JPG`: exemplo de dashboard de auditoria de PIX em uma planilha.
 - `Landing Page.JPG`: exemplo visual de uma landing page institucional.
 - `assets_monitor.JPG`: exemplo visual de um sistema desktop de monitoramento.
 
